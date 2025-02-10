@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Collection - Aqeeq</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
             --primary-green: #1a3d2f;
@@ -25,39 +26,53 @@
             color: var(--primary-green);
         }
 
-        /* Navigation */
         .navbar {
             background-color: var(--primary-green);
-            padding: 1.5rem 5%;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
         }
 
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
+        .navbar .navbar-brand {
             font-family: 'Playfair Display', serif;
             color: var(--gold);
             font-size: 2rem;
-            text-decoration: none;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
+        .navbar .nav-link {
+            color: var(--light-beige) !important;
         }
 
-        .nav-links a {
+        .navbar .nav-link:hover {
+            color: var(--gold) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-green);
+            border-color: var(--secondary-green);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-green);
+            border-color: var(--primary-green);
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--primary-green);
+            font-size: 1.25rem;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--accent-green);
+        }
+
+        footer {
+            background-color: var(--primary-green);
             color: var(--light-beige);
-            text-decoration: none;
-            font-weight: 500;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
         }
 
         /* Collection Grid */
@@ -74,74 +89,12 @@
             margin-bottom: 3rem;
         }
 
-        .collection-grid {
-            display: flex;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .product-column {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .product-card {
-            flex: 1;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
         .product-image {
             width: 100%;
             height: 250px;
             object-fit: cover;
             margin-bottom: 1rem;
             border-radius: 5px;
-        }
-
-        /* Buttons */
-        .btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary-green);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-green);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-green);
-            color: var(--light-beige);
-            padding: 4rem 5%;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h3 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1.5rem;
-            color: var(--gold);
         }
 
         /* Responsive Design */
@@ -167,123 +120,165 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="#" class="logo">Aqeeq</a>
-            <div class="nav-links">
-                <a href="#collection">Our Collection</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="#cart">Cart</a>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Aqeeq</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#collection">Our Collection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cart">Cart</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <main class="collection">
-        <h2 class="section-title">Our Collection</h2>
-        <div class="collection-grid">
-            <!-- Product 1 -->
-            <!-- Inside the collection-grid div -->
-            <div class="collection-grid">
+    <main class="collection py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Our Collection</h2>
+            <div class="row">
                 <!-- First Column -->
-                <div class="product-column">
-                    <div class="product-card">
-                        <img src="necklace1.jpg" alt="Emerald Cascade" class="product-image">
-                        <h3>Emerald Cascade</h3>
-                        <p>18K Gold & Diamond Accents</p>
-                        <p>$1,899</p>
-                        <button class="btn btn-primary" onclick="location.href='ecd.html'">View Details</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="necklace4.jpg" alt="Forest Dew" class="product-image">
-                        <h3>Forest Dew</h3>
-                        <p>White Gold & Emerald Teardrop</p>
-                        <p>$2,299</p>
-                        <button class="btn btn-primary">View Details</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="necklace7.jpg" alt="Moss Agate" class="product-image">
-                        <h3>Moss Agate</h3>
-                        <p>Yellow Gold & Carved Emerald</p>
-                        <p>$1,699</p>
-                        <button class="btn btn-primary">View Details</button>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="necklace1.jpg" alt="Emerald Cascade" class="card-img-top product-image">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Emerald Cascade</h3>
+                            <p class="card-text">18K Gold & Diamond Accents</p>
+                            <p class="card-text">$1,899</p>
+                            <button class="btn btn-primary" onclick="location.href='ecd.html'">View Details</button>
+                        </div>
                     </div>
                 </div>
-
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="necklace4.jpg" alt="Forest Dew" class="card-img-top product-image">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Forest Dew</h3>
+                            <p class="card-text">White Gold & Emerald Teardrop</p>
+                            <p class="card-text">$2,299</p>
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="necklace7.jpg" alt="Moss Agate" class="card-img-top product-image">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Moss Agate</h3>
+                            <p class="card-text">Yellow Gold & Carved Emerald</p>
+                            <p class="card-text">$1,699</p>
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div>
                 <!-- Second Column -->
-                <div class="product-column">
-                    <div class="product-card">
-                        <img src="necklace2.jpeg" alt="Forest Elegance" class="product-image">
-                        <h3>Forest Elegance</h3>
-                        <p>Platinum & Emerald Cluster</p>
-                        <p>$2,499</p>
-                        <button class="btn btn-primary">View Details</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="necklace5.jpg" alt="Jungle Royal" class="product-image">
-                        <h3>Jungle Royal</h3>
-                        <p>Rose Gold & Emerald Choker</p>
-                        <p>$2,799</p>
-                        <button class="btn btn-primary">View Details</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="necklace8.jpg" alt="Enchanted Vine" class="product-image">
-                        <h3>Enchanted Vine</h3>
-                        <p>Diamond-Studded Emerald Trail</p>
-                        <p>$3,199</p>
-                        <button class="btn btn-primary">View Details</button>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="necklace2.jpeg" alt="Forest Elegance" class="card-img-top product-image">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Forest Elegance</h3>
+                            <p class="card-text">Platinum & Emerald Cluster</p>
+                            <p class="card-text">$2,499</p>
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
                     </div>
                 </div>
-
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="necklace5.jpg" alt="Jungle Royal" class="card-img-top product-image">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Jungle Royal</h3>
+                            <p class="card-text">Rose Gold & Emerald Choker</p>
+                            <p class="card-text">$2,799</p>
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="necklace8.jpg" alt="Enchanted Vine" class="card-img-top product-image">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Enchanted Vine</h3>
+                            <p class="card-text">Diamond-Studded Emerald Trail</p>
+                            <p class="card-text">$3,199</p>
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div>
                 <!-- Third Column -->
-                <div class="product-column">
-                    <div class="product-card">
-                        <img src="necklace3.jpg" alt="Verdant Harmony" class="product-image">
-                        <h3>Verdant Harmony</h3>
-                        <p>Rose Gold & Pear Cut Emerald</p>
-                        <p>$1,999</p>
-                        <button class="btn btn-primary">View Details</button>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="necklace3.jpg" alt="Verdant Harmony" class="card-img-top product-image">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Verdant Harmony</h3>
+                            <p class="card-text">Rose Gold & Pear Cut Emerald</p>
+                            <p class="card-text">$1,999</p>
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <img src="necklace6.jpg" alt="Canopy Sparkle" class="product-image">
-                        <h3>Canopy Sparkle</h3>
-                        <p>Emerald & Sapphire Combination</p>
-                        <p>$2,899</p>
-                        <button class="btn btn-primary">View Details</button>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="necklace6.jpg" alt="Canopy Sparkle" class="card-img-top product-image">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Canopy Sparkle</h3>
+                            <p class="card-text">Emerald & Sapphire Combination</p>
+                            <p class="card-text">$2,899</p>
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <img src="necklace9.jpg" alt="Celestial Green" class="product-image">
-                        <h3>Celestial Green</h3>
-                        <p>Star-shaped Emerald Pendant</p>
-                        <p>$2,099</p>
-                        <button class="btn btn-primary">View Details</button>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="necklace9.jpg" alt="Celestial Green" class="card-img-top product-image">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Celestial Green</h3>
+                            <p class="card-text">Star-shaped Emerald Pendant</p>
+                            <p class="card-text">$2,099</p>
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Products 4-9 (Repeat similar structure) -->
-            <!-- Add remaining 6 product cards here following the same pattern -->
-            
         </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Aqeeq</h3>
-                <p>Crafting heirloom-quality emerald jewelry since 2010</p>
-            </div>
-            <div class="footer-section">
-                <h3>Customer Service</h3>
-                <p>Shipping & Returns</p>
-                <p>Care Guide</p>
-                <p>FAQ</p>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>hello@aqeeq.com</p>
-                <p>+1 (555) 123-4567</p>
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-section">
+                    <h3>About Aqeeq</h3>
+                    <p>Crafting heirloom-quality emerald jewelry since 2010</p>
+                </div>
+                <div class="col-md-4 footer-section">
+                    <h3>Customer Service</h3>
+                    <p>Shipping & Returns</p>
+                    <p>Care Guide</p>
+                    <p>FAQ</p>
+                </div>
+                <div class="col-md-4 footer-section">
+                    <h3>Contact</h3>
+                    <p>hello@aqeeq.com</p>
+                    <p>+1 (555) 123-4567</p>
+                </div>
             </div>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
